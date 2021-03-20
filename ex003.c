@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <locale.h>
+#include <string.h>
 
 void main() {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese_Brasil");
 
     char nome[30];
     int idade;
@@ -10,13 +11,19 @@ void main() {
 
     printf("<<<     EX003 - DADOS     >>>\n\n");
     printf("\nQual é seu nome? ");
-    scanf("%s", nome);
+    fgets(nome, 30, stdin);
+    fflush(stdin);
+
     printf("Qual a sua idade? ");
     scanf("%d", &idade);
+
     printf("Qual seu peso? ");
     scanf("%f", &peso);
 
-    printf("---------- PROCESSANDO ----------\n");
-    printf("\nMuito prazer, %s. você tem %d anos e pesa %.2fKg correto?", nome, idade, peso);
+    int quebra = strcspn(nome, "\n");
+    nome[quebra] = '\0';
 
+    printf("\n---------- PROCESSANDO ----------\n");
+    printf("\nMuito prazer, %s. você tem %d anos e pesa %.2fKg correto?", nome, idade, peso);
+    printf("\n\n");
 }

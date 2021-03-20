@@ -4,11 +4,12 @@
 void main() {
     setlocale(LC_ALL, "Portuguese");
     printf("<<< EXO01 - Listagem >>>\n");
-    printf("\nListagem de Alunos");
+    printf("\nListagem de Alunos\n");
     printf("\nNome \t\tNota");
     printf("\n---------------------");
     printf("\nAna Beatriz \t8.5");
     printf("\nBianca Martins \t9.0");
     printf("\nCláudio Sá \t5.5");
-    printf("\nGiovana Silva \t7.5\n");
+    printf("\nGiovana Silva \t7.5");
+    printf("\n\n");
 }
